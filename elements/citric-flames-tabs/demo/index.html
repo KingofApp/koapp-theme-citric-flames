@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+  <head>
+    <title>citric-flames-tabs demo</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+
+    <script src="../../../../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../../../../bower_components/iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../../../../bower_components/iron-flex-layout/iron-flex-layout.html">
+    <link rel="import" href="../../citric-flames-toolbar/citric-flames-toolbar.html">
+    <link rel="import" href="../citric-flames-tab.html">
+    <link rel="import" href="../citric-flames-tabs.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+      #container {
+        max-width: 600px;
+      }
+
+      .vertical-section {
+        margin: 0 0 40px;
+      }
+    </style>
+  </head>
+  <body unresolved>
+    <div id="container" class="vertical-section-container centered">
+      <h3>Plain <code>citric-flames-tabs</code>.</h3>
+      <div class="vertical-section">
+        <citric-flames-tabs selected="0">
+          <citric-flames-tab>ITEM ONE</citric-flames-tab>
+          <citric-flames-tab>ITEM TWO</citric-flames-tab>
+          <citric-flames-tab>ITEM THREE</citric-flames-tab>
+        </citric-flames-tabs>
+      </div>
+
+      <h3>
+        The <code>scrollable</code> attribute causes the tabs to scroll, rather
+        than compress, when there is not enough space. Arrow buttons appear when
+        any of the tabs are not completely visible.
+      </h3>
+      <div class="vertical-section">
+        <citric-flames-tabs selected="0" scrollable>
+          <citric-flames-tab>NUMBER ONE ITEM</citric-flames-tab>
+          <citric-flames-tab>ITEM TWO</citric-flames-tab>
+          <citric-flames-tab>THE THIRD ITEM</citric-flames-tab>
+          <citric-flames-tab>THE ITEM FOUR</citric-flames-tab>
+          <citric-flames-tab>FIFTH</citric-flames-tab>
+          <citric-flames-tab>THE SIXTH TAB</citric-flames-tab>
+          <citric-flames-tab>NUMBER SEVEN</citric-flames-tab>
+          <citric-flames-tab>EIGHT</citric-flames-tab>
+          <citric-flames-tab>NUMBER NINE</citric-flames-tab>
+          <citric-flames-tab>THE TENTH</citric-flames-tab>
+          <citric-flames-tab>THE ITEM ELEVEN</citric-flames-tab>
+          <citric-flames-tab>TWELFTH ITEM</citric-flames-tab>
+        </citric-flames-tabs>
+      </div>
+
+      <h3>
+        Tab layout is effected by the writing direction of the surrounding area.
+      </h3>
+      <div class="vertical-section">
+        <div dir="rtl">
+          <citric-flames-tabs selected="0">
+            <citric-flames-tab>ITEM ONE</citric-flames-tab>
+            <citric-flames-tab>ITEM TWO</citric-flames-tab>
+            <citric-flames-tab>ITEM THREE</citric-flames-tab>
+          </citric-flames-tabs>
+          &nbsp;
+          <citric-flames-tabs selected="0" scrollable>
+            <citric-flames-tab>NUMBER ONE ITEM</citric-flames-tab>
+            <citric-flames-tab>ITEM TWO</citric-flames-tab>
+            <citric-flames-tab>THE THIRD ITEM</citric-flames-tab>
+            <citric-flames-tab>THE ITEM FOUR</citric-flames-tab>
+            <citric-flames-tab>FIFTH</citric-flames-tab>
+            <citric-flames-tab>THE SIXTH TAB</citric-flames-tab>
+            <citric-flames-tab>NUMBER SEVEN</citric-flames-tab>
+            <citric-flames-tab>EIGHT</citric-flames-tab>
+            <citric-flames-tab>NUMBER NINE</citric-flames-tab>
+            <citric-flames-tab>THE TENTH</citric-flames-tab>
+            <citric-flames-tab>THE ITEM ELEVEN</citric-flames-tab>
+            <citric-flames-tab>TWELFTH ITEM</citric-flames-tab>
+          </citric-flames-tabs>
+        </div>
+      </div>
+
+      <h3>
+        Tabs can be used in a <code>citric-flames-toolbar</code>.
+      </h3>
+      <div class="vertical-section">
+        <style is="custom-style">
+          .self-end {
+            /* This mixin (from iron-flex-layout) aligns the tabs to the
+               bottom of the toolbar. */
+            @apply(--layout-self-end);
+          }
+        </style>
+
+        <citric-flames-toolbar class="tall">
+          <citric-flames-tabs selected="0" class="bottom self-end" style="width: 300px;">
+            <citric-flames-tab>ITEM ONE</citric-flames-tab>
+            <citric-flames-tab>ITEM TWO</citric-flames-tab>
+          </citric-flames-tabs>
+        </citric-flames-toolbar>
+      </div>
+    </div>
+  </body>
+</html>

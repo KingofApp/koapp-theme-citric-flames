@@ -1,0 +1,33 @@
+/* General styles */
+
+.module {
+  padding: 10px;
+}
+
+.module .module {
+  padding: 0;
+}
+
+.module > a {
+  color: inherit;
+  display: block;
+  text-decoration: none;
+}
+
+.module > a + a,
+citric-flames-card + citric-flames-card {
+  margin-top: 15px;
+}
+
+citric-flames-card {
+  max-width: 100%;
+}
+
+form {
+  margin: 15px;
+}
+
+form citric-flames-button {
+  float: right;
+  margin-top: 15px;
+}
