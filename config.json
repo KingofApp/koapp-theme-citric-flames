@@ -1,0 +1,64 @@
+{
+  "name": "Citric Flames",
+  "identifier": "koapp-theme-citric-flames",
+  "description": {
+    "en-US" : "",
+    "es-ES" : "Plantilla basada en las guías de diseño de Material Design"
+  },
+  "version": "1.0",
+  "author": "King of App",
+  "category": [
+    "material-design"
+  ],
+  "price": 0,
+  "platforms": [
+    "android",
+    "ios",
+    "windows"
+  ],
+  "showOn": {
+    "market": true
+  },
+  "images" : {
+    "list" : "images/list.png",
+    "screenshots" : [
+      "images/screenshot01.png",
+      "images/screenshot02.png"
+    ],
+    "popover" : "images/popover.png",
+    "banner" : "images/banner.png"
+  },
+  "defaultConfig": {
+    "colors": {
+      "primaryTextColor": "#424242",
+      "primaryBackgroundColor": "#ffffff",
+      "secondaryTextColor": "#424242",
+      "disabledTextColor": "#656565",
+      "dividerColor": "#e0e0e0",
+      "primaryColor": "#fb8c00",
+      "lightPrimaryColor": "#c5cae9",
+      "darkPrimaryColor": "#fb8c00",
+      "accentColor": "#ffffff",
+      "lightAccentColor": "#ffffff",
+      "darkAccentColor": "#ffffff",
+      "errorColor": "#dd2c00",
+      "backgroundColor": "#f5f5f5"
+    },
+    "images": {
+      "background": ""
+    },
+    "fonts": {
+      "primaryFontFamily": {
+        "name": "Roboto",
+        "url": "https://fonts.googleapis.com/css?family=Roboto"
+      },
+      "titleFontFamily": {
+        "name": "Raleway",
+        "url": "https://fonts.googleapis.com/css?family=Raleway"
+      }
+    },
+    "menu": "polymermenu"
+  },
+  "subscription": false,
+  "main": "themes/koapp-theme-citric-flames/koapp-theme-citric-flames.html"
+}
