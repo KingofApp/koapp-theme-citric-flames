@@ -9,34 +9,152 @@
 
     <script src="../../../../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 
+    <link rel="import" href="../../../../../bower_components/iron-icon/iron-icon.html">
+    <link rel="import" href="../../../../../bower_components/iron-icons/communication-icons.html">
+    <link rel="import" href="../../../../../bower_components/iron-icons/iron-icons.html">
     <link rel="import" href="../../../../../bower_components/paper-styles/demo-pages.html">
-    <link rel="import" href="../../../../../bower_components/paper-styles/shadow.html">
+    <link rel="import" href="../../citric-flames-icon-button/citric-flames-icon-button.html">
     <link rel="import" href="../citric-flames-item.html">
+    <link rel="import" href="../citric-flames-item-body.html">
 
     <style is="custom-style">
-      .list {
-        @apply(--shadow-elevation-2dp);
-
-        background-color: white;
-        display: inline-block;
-        margin: 12px;
-        width: 240px;
+      div[role="listbox"] {
+        border: 1px solid #e5e5e5;
       }
 
-      h4 {
-        margin-left: 24px;
+      .avatar {
+        display: inline-block;
+        box-sizing: border-box;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--paper-amber-500);
+      }
+
+      .blue {
+        background-color: var(--paper-light-blue-300);
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div>
-        <h4>Single line items</h4>
-        <div class="list" role="listbox">
+    <div class="vertical-section-container centered">
+      <h3>citric-flames-items are simple list elements, ideally used in an element with <i>role="listbox"</i></h3>
+      <div class="vertical-section">
+        <div role="listbox">
           <citric-flames-item>Inbox</citric-flames-item>
           <citric-flames-item>Starred</citric-flames-item>
           <citric-flames-item>Sent mail</citric-flames-item>
-          <citric-flames-item>Drafts</citric-flames-item>
+        </div>
+      </div>
+
+      <h3>They can be styled using custom properties</h3>
+      <div class="vertical-section">
+        <style is="custom-style">
+          citric-flames-item.fancy {
+            --item-focused: {
+              background: var(--paper-amber-500);
+              font-weight: bold;
+            };
+            --item-focused-before: {
+              opacity: 0;
+            };
+          }
+        </style>
+        <div role="listbox">
+          <citric-flames-item class="fancy">Inbox</citric-flames-item>
+          <citric-flames-item class="fancy">Starred</citric-flames-item>
+          <citric-flames-item class="fancy">Sent mail</citric-flames-item>
+        </div>
+      </div>
+
+      <h3>To add a leading element, use a citric-flames-item with an <i>item-icon</i> attribute. This
+      leading image can be an iron-icon, or any other regular element.</h3>
+      <div class="vertical-section">
+        <div role="listbox">
+          <citric-flames-item>
+            <iron-icon icon="inbox" item-icon></iron-icon>
+            Inbox
+          </citric-flames-item>
+          <citric-flames-item>
+            <iron-icon icon="star" item-icon></iron-icon>
+            Starred
+          </citric-flames-item>
+        </div>
+      </div>
+
+      <h3>For two-line or three-line items, use a citric-flames-item-body inside a citric-flames-item</h3>
+      <div class="vertical-section">
+        <div role="listbox">
+          <citric-flames-item>
+            <citric-flames-item-body two-line>
+              <div>Profile Photo</div>
+              <div secondary>Change your Google+ profile photo</div>
+            </citric-flames-item-body>
+          </citric-flames-item>
+          <citric-flames-item>
+            <citric-flames-item-body three-line>
+              <div>Ali Connors</div>
+              <div secondary>Brunch this weekend?</div>
+              <div secondary>I'll be in your neighborhood doing errands</div>
+            </citric-flames-item-body>
+          </citric-flames-item>
+          <citric-flames-item>
+            <iron-icon icon="communication:phone" item-icon></iron-icon>
+            <citric-flames-item-body two-line>
+              <div>(650) 555-1234</div>
+              <div secondary>Mobile</div>
+            </citric-flames-item-body>
+          </citric-flames-item>
+          <citric-flames-item>
+            <div class="avatar blue" item-icon></div>
+            <citric-flames-item-body two-line>
+              <div>Alphonso Engelking</div>
+              <div secondary>Change photo</div>
+            </citric-flames-item-body>
+          </citric-flames-item>
+        </div>
+      </div>
+
+      <h3>Complex layouts are usually a combination of all these elements</h3>
+      <div class="vertical-section">
+        <div role="listbox">
+          <citric-flames-item>
+            <div class="avatar blue" item-icon></div>
+            <citric-flames-item-body two-line>
+              <div>Photos</div>
+              <div secondary>Jan 9, 2014</div>
+            </citric-flames-item-body>
+            <citric-flames-icon-button icon="star" alt="favourite this!"></citric-flames-icon-button>
+          </citric-flames-item>
+          <citric-flames-item>
+            <div class="avatar" item-icon></div>
+            <citric-flames-item-body two-line>
+              <div>Recipes</div>
+              <div secondary>Jan 17, 2014</div>
+            </citric-flames-item-body>
+            <citric-flames-icon-button icon="star" alt="favourite this!"></citric-flames-icon-button>
+          </citric-flames-item>
+        </div>
+      </div>
+
+      <h3>citric-flames-items can be used as links</h3>
+      <div class="vertical-section">
+        <style is="custom-style">
+          .citric-flames-item-link {
+            color: inherit;
+            text-decoration: none;
+          }
+        </style>
+        <div role="listbox">
+          <a class="citric-flames-item-link" href="#inbox" tabindex="-1">
+            <citric-flames-item>Inbox</citric-flames-item>
+          </a>
+          <a class="citric-flames-item-link" href="#starred" tabindex="-1">
+            <citric-flames-item>Starred</citric-flames-item>
+          </a>
+          <a class="citric-flames-item-link" href="#sent" tabindex="-1">
+            <citric-flames-item>Sent mail</citric-flames-item>
+          </a>
         </div>
       </div>
     </div>
